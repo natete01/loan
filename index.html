@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="limit">
+                <p>BK bank Loan Limit</p>
+            </div>
+    <input type="number" id="salary" placeholder="Enter your current salary">
+    <input type="number" id="loanAmount" placeholder="Enter the amount of loan requested">
+    <input type="button" onclick="calculateLoanLimit()" value="Calculate Loan Limit">
+    <div class="response">
+        <p id="result"></p>
+    </div>
+        </div>
+    </div>
+    <script>
+    function calculateLoanLimit() {
+    const salary = document.getElementById("salary").value;
+    const loanAmount = document.getElementById("loanAmount").value;
+    // Calculate the loan limit
+    const loanLimit = salary * 0.80;
+    // Display the loan limit
+    document.getElementById("result").innerHTML = `Your loan limit is ${loanLimit}.`;
+    // Check if the requested loan amount is within the loan limit
+    if (loanAmount > loanLimit) {
+    // document.getElementById("result").innerHTML += `<p style="color: red;">The requested
+    // loan amount is greater than your loan limit.</p>`;
+    alert("he requested loan amount is greater than your loan limit.")
+    }
+    }
+    </script>
+    </body>
+</html>
